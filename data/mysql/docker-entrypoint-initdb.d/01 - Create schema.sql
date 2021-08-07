@@ -1,0 +1,1 @@
+CREATE SCHEMA `la_haus`;

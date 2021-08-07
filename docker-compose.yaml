@@ -1,0 +1,13 @@
+version: "3.9"
+services:
+  mysql:
+    container_name: mysql
+    image: mysql
+    command: --default-authentication-plugin=mysql_native_password
+    environment:
+      MYSQL_ROOT_PASSWORD: felipe
+    volumes:
+      - ./data/mysql/docker-entrypoint-initdb.d:/docker-entrypoint-initdb.d
+      #- /home/felipe/projects/felipe/data/:/data
+    ports:
+      - 3306:3306

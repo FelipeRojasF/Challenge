@@ -1,9 +1,14 @@
 package com.la_haus.domain.entity;
 
-public class Pricing {
-    Property p = new Property();
+import lombok.Data;
 
-    public Object getP() {
-        return p.getId();
-    }
+import javax.persistence.Embeddable;
+import javax.validation.constraints.NotNull;
+
+@Data
+@Embeddable
+public class Pricing {
+    @NotNull(message = "sale price cannot be null")
+    private int salePrice;
+    private int administrativeFee;
 }
